@@ -75,13 +75,16 @@
     font-size: clamp(3.2rem, 11vw, 6.2rem);
     line-height: 0.98;
     letter-spacing: -0.02em;
-    color: #fff;
     margin: 0 0 26px;
+    background: linear-gradient(100deg, #ffffff 10%, #ffe3ea 45%, #ffc9d6 65%, #ffd9c2 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
   }
   .hero h1 em {
     font-style: italic;
     font-weight: 400;
-    color: #ffd9e0;
   }
   .hero-tagline {
     font-size: 1.15rem;
@@ -213,8 +216,12 @@
     font-style: italic;
     font-weight: 500;
     font-size: 1.6rem;
-    color: var(--accent-deep);
     margin: 0 0 28px;
+    background: linear-gradient(100deg, #8a3d54 0%, #c15c78 55%, #d4826f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--accent-deep);
   }
 
   p { margin: 0 0 14px; }

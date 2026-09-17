@@ -264,7 +264,7 @@
   .pub-entry { font-size: 0.96rem; margin-bottom: 10px; }
   .pub-entry:last-child { margin-bottom: 0; }
   .pub-entry a { color: var(--accent-deep); }
-  .item p a, .conf-meta a, .news-row a { color: var(--accent-deep); }
+  .item p a, .conf-meta a { color: var(--accent-deep); }
 
   .tag {
     display: inline-block;
@@ -278,25 +278,6 @@
     border-radius: 5px;
     margin-right: 8px;
     vertical-align: 1px;
-  }
-
-  /* ---------- NEWS ---------- */
-  .news-row {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 4px 18px;
-    margin-bottom: 16px;
-    font-size: 0.95rem;
-  }
-  .news-row:last-child { margin-bottom: 0; }
-  .news-date {
-    color: var(--accent-deep);
-    font-weight: 600;
-    font-size: 0.82rem;
-    white-space: nowrap;
-  }
-  @media (max-width: 600px) {
-    .news-row { grid-template-columns: 1fr; gap: 2px; }
   }
 
   .conf-list { font-size: 0.96rem; }
@@ -340,7 +321,6 @@
   <nav class="topnav">
     <div class="nav-inner">
       <ul>
-        <li><a href="#news">News</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#methods">Methods</a></li>
         <li><a href="#teaching">Teaching</a></li>
@@ -378,15 +358,6 @@
   </div>
 
   <main>
-
-    <section class="block" id="news">
-      <h2>News</h2>
-      <div class="news-row"><span class="news-date">2026</span><span>Published "Teachers' Perceptions of Creativity" in <em>Research Studies in Music Education</em> — read it <a href="https://doi.org/10.1177/1321103X261460254" target="_blank" rel="noopener">here</a>.</span></div>
-      <div class="news-row"><span class="news-date">2025</span><span>Started Syn-Aesthetica with jewellery designer Dong Ding.</span></div>
-      <div class="news-row"><span class="news-date">Jun 2024</span><span>Completed my PhD in Education at the University of Glasgow — read the thesis <a href="https://theses.gla.ac.uk/84351/" target="_blank" rel="noopener">here</a>.</span></div>
-      <div class="news-row"><span class="news-date">2024</span><span>Began as Guest Lecturer at the University of Liverpool.</span></div>
-      <div class="news-row"><span class="news-date">27 Sep 2023</span><span>Passed my PhD viva.</span></div>
-    </section>
 
     <section class="block" id="research">
       <h2>Research focus</h2>

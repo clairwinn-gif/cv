@@ -232,6 +232,39 @@
   .pub-entry:last-child { margin-bottom: 0; }
   .pub-entry a { color: var(--accent-deep); }
 
+  .tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-right: 8px;
+    vertical-align: 1px;
+  }
+
+  /* ---------- NEWS ---------- */
+  .news-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 4px 18px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+  .news-row:last-child { margin-bottom: 0; }
+  .news-date {
+    color: var(--accent-deep);
+    font-weight: 600;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .news-row { grid-template-columns: 1fr; gap: 2px; }
+  }
+
   .conf-list { font-size: 0.96rem; }
   .conf-row { margin-bottom: 12px; }
   .conf-row:last-child { margin-bottom: 0; }
@@ -266,11 +299,12 @@
   <nav class="topnav">
     <div class="nav-inner">
       <ul>
+        <li><a href="#news">News</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#methods">Methods</a></li>
         <li><a href="#teaching">Teaching</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#methods">Methods</a></li>
       </ul>
       <a class="cv-download" href="Winn-Ge-CV.pdf" target="_blank" rel="noopener">↓ Download CV (PDF)</a>
     </div>
@@ -298,6 +332,15 @@
 
   <main>
 
+    <section class="block" id="news">
+      <h2>News</h2>
+      <div class="news-row"><span class="news-date">2026</span><span>Published "Teachers' Perceptions of Creativity" in <em>Research Studies in Music Education</em> — read it <a href="https://doi.org/10.1177/1321103X261460254" target="_blank" rel="noopener">here</a>.</span></div>
+      <div class="news-row"><span class="news-date">2025</span><span>Started Syn-Aesthetica with jewellery designer Dong Ding.</span></div>
+      <div class="news-row"><span class="news-date">Jun 2024</span><span>Completed my PhD in Education at the University of Glasgow.</span></div>
+      <div class="news-row"><span class="news-date">2024</span><span>Began as Guest Lecturer at the University of Liverpool.</span></div>
+      <div class="news-row"><span class="news-date">27 Sep 2023</span><span>Passed my PhD viva.</span></div>
+    </section>
+
     <section class="block" id="research">
       <h2>Research focus</h2>
       <div class="item">
@@ -318,6 +361,16 @@
         <div class="item-title">XR research design for inclusive pedagogy</div>
         <p>Authored a full proposal for the ESRC North West Social Science DTP (NWSSDTP) Postdoctoral Fellowship (October 2025 entry) on XR-based music pedagogy for neurodivergent learners, drawing on AR/holographic display technology from Liverpool's Design4Life lab (Dr Hao-Ming Xia's museum and cultural-heritage AR research) — not taken forward at the institutional nomination stage. The participatory co-design and cognitive-science evaluation framework it produced now informs the evaluation design being developed for Syn-Aesthetica.</p>
       </div>
+    </section>
+
+    <section class="block" id="methods">
+      <h2>Methods &amp; tools</h2>
+      <dl class="tools-grid">
+        <dt>Qualitative</dt><dd>Semi-structured / video-elicited interviews, observation, thematic analysis, NVivo, PRISMA scoping reviews.</dd>
+        <dt>Computational</dt><dd>Python (librosa for music-feature extraction).</dd>
+        <dt>Languages</dt><dd>Mandarin (native), English (fluent).</dd>
+        <dt>Musical practice</dt><dd>20 years' piano training; 13 years' vocal training in traditional Chinese folk song singing.</dd>
+      </dl>
     </section>
 
     <section class="block" id="teaching">
@@ -354,40 +407,30 @@
       <h2>Publications</h2>
       <div class="pub-group">
         <div class="pub-status">Published</div>
-        <div class="pub-entry">Ge, X., Odena, O., &amp; Livingston, K. (2026). Teachers' Perceptions of Creativity: A Practice-Informed Model from Primary School Music and Piano Teaching in China. <em>Research Studies in Music Education</em>. <a href="https://doi.org/10.1177/1321103X261460254" target="_blank" rel="noopener">doi.org/10.1177/1321103X261460254</a></div>
+        <div class="pub-entry"><span class="tag">RSME</span>Ge, X., Odena, O., &amp; Livingston, K. (2026). Teachers' Perceptions of Creativity: A Practice-Informed Model from Primary School Music and Piano Teaching in China. <em>Research Studies in Music Education</em>. <a href="https://doi.org/10.1177/1321103X261460254" target="_blank" rel="noopener">doi.org/10.1177/1321103X261460254</a></div>
       </div>
       <div class="pub-group">
         <div class="pub-status">Under review</div>
-        <div class="pub-entry">Ge, X., Odena, O., &amp; Livingston, K. Creativity in Music Education: The Influence of Policy and Experience on Piano and School Music Teachers' Perceptions in Shandong, China. <em>Music Education Research</em>.</div>
+        <div class="pub-entry"><span class="tag">MER</span>Ge, X., Odena, O., &amp; Livingston, K. Creativity in Music Education: The Influence of Policy and Experience on Piano and School Music Teachers' Perceptions in Shandong, China. <em>Music Education Research</em>.</div>
       </div>
       <div class="pub-group">
         <div class="pub-status">In preparation</div>
-        <div class="pub-entry">Li, S., Ge, X., &amp; Odena, O. Teacher mediation of musical engagement across early childhood and primary music education in China: a qualitative secondary analysis. Manuscript in development; target: <em>Australasian Journal of Early Childhood</em>.</div>
-        <div class="pub-entry">Ding, D. &amp; Ge, X. Physical and Tangible Representations of Music: A Scoping Review of Design and Mapping Approaches and Their Applications in Learning, Wellbeing and Creative Practice. <em>CoDesign</em>.</div>
-        <div class="pub-entry">Ge, X. &amp; Ding, D. Syn-Aesthetica: an open-source tool mapping music analysis to physical/kinetic representation. <em>Journal of Open Source Software</em>.</div>
+        <div class="pub-entry"><span class="tag">AJEC</span>Li, S., Ge, X., &amp; Odena, O. Teacher mediation of musical engagement across early childhood and primary music education in China: a qualitative secondary analysis. Manuscript in development; target: <em>Australasian Journal of Early Childhood</em>.</div>
+        <div class="pub-entry"><span class="tag">CoDesign</span>Ding, D. &amp; Ge, X. Physical and Tangible Representations of Music: A Scoping Review of Design and Mapping Approaches and Their Applications in Learning, Wellbeing and Creative Practice. <em>CoDesign</em>.</div>
+        <div class="pub-entry"><span class="tag">JOSS</span>Ge, X. &amp; Ding, D. Syn-Aesthetica: an open-source tool mapping music analysis to physical/kinetic representation. <em>Journal of Open Source Software</em>.</div>
       </div>
     </section>
 
     <section class="block">
       <h2>Conferences &amp; presentations</h2>
       <div class="conf-list">
-        <div class="conf-row"><span class="conf-title">Quality and Aesthetics in Music Teachers' Perspectives</span> — <span class="conf-meta">ISATT 21st Biennial Conference, Glasgow, 2025</span></div>
-        <div class="conf-row"><span class="conf-title">Exploring Multimodal Communication in Music Education</span> — <span class="conf-meta">LKALE SIG / BAAL Conference, 2024</span></div>
-        <div class="conf-row"><span class="conf-title">Chinese Music Teachers' Perceptions of Fostering Creativity: The Contradiction Between 'What I Should Do, What I Can Do, and What I Am Asked to Do'</span> — <span class="conf-meta">RiME 2023 Conference Proceedings</span></div>
-        <div class="conf-row"><span class="conf-title">An Empirical Model of Creativity in Music Education</span> — <span class="conf-meta">RiME 2023, Online</span></div>
-        <div class="conf-row"><span class="conf-title">Using Digital Tools to Bridge the Distance Divide</span> — <span class="conf-meta">University of Glasgow PhD-led Webinar, 2020</span></div>
+        <div class="conf-row"><span class="tag">ISATT</span><span class="conf-title">Quality and Aesthetics in Music Teachers' Perspectives</span> — <span class="conf-meta">ISATT 21st Biennial Conference, Glasgow, 2025</span></div>
+        <div class="conf-row"><span class="tag">BAAL</span><span class="conf-title">Exploring Multimodal Communication in Music Education</span> — <span class="conf-meta">LKALE SIG / BAAL Conference, 2024</span></div>
+        <div class="conf-row"><span class="tag">RiME</span><span class="conf-title">Chinese Music Teachers' Perceptions of Fostering Creativity: The Contradiction Between 'What I Should Do, What I Can Do, and What I Am Asked to Do'</span> — <span class="conf-meta">RiME 2023 Conference Proceedings</span></div>
+        <div class="conf-row"><span class="tag">RiME</span><span class="conf-title">An Empirical Model of Creativity in Music Education</span> — <span class="conf-meta">RiME 2023, Online</span></div>
+        <div class="conf-row"><span class="tag">UofG</span><span class="conf-title">Using Digital Tools to Bridge the Distance Divide</span> — <span class="conf-meta">University of Glasgow PhD-led Webinar, 2020</span></div>
       </div>
       <p style="margin-top:20px; font-size:0.9rem; color:var(--sub);">Reviewer, <em>Learning Environments Research</em> (Springer Nature).</p>
-    </section>
-
-    <section class="block" id="methods">
-      <h2>Methods &amp; tools</h2>
-      <dl class="tools-grid">
-        <dt>Qualitative</dt><dd>Semi-structured / video-elicited interviews, observation, thematic analysis, NVivo, PRISMA scoping reviews.</dd>
-        <dt>Computational</dt><dd>Python (librosa for music-feature extraction).</dd>
-        <dt>Languages</dt><dd>Mandarin (native), English (fluent).</dd>
-        <dt>Musical practice</dt><dd>20 years' piano training; 13 years' vocal training in traditional Chinese folk song singing.</dd>
-      </dl>
     </section>
 
   </main>

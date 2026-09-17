@@ -146,16 +146,19 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    font-family: 'Inter', sans-serif;
     font-size: 0.78rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: #ffffff !important;
     background: var(--accent-deep);
-    padding: 7px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     text-decoration: none;
     white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(138,61,84,.35);
   }
-  .cv-download:hover { background: var(--accent); }
+  .cv-download:hover { background: var(--accent-deep); opacity: 0.85; }
+  .cv-download svg { display: block; }
   @media (max-width: 600px) {
     nav.topnav ul { gap: 14px; }
   }
@@ -165,6 +168,23 @@
     max-width: 640px;
     margin: 0 auto;
     padding: 96px 24px 64px;
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+  }
+  .intro-photo {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 18px rgba(138,61,84,.22);
+    border: 3px solid #fff;
+  }
+  .intro-text { flex: 1; min-width: 0; }
+  @media (max-width: 560px) {
+    .intro { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+    .intro-photo { width: 108px; height: 108px; }
   }
   .intro p {
     font-family: 'Fraunces', Georgia, serif;
@@ -306,7 +326,10 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#publications">Publications</a></li>
       </ul>
-      <a class="cv-download" href="Winn-Ge-CV.pdf" target="_blank" rel="noopener">↓ Download CV (PDF)</a>
+      <a class="cv-download" href="Winn-Ge-CV.pdf" target="_blank" rel="noopener" aria-label="Download CV (PDF)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        CV
+      </a>
     </div>
   </nav>
 
@@ -326,8 +349,11 @@
   </div>
 
   <div class="intro">
-    <p>I'm a PhD in Education (University of Glasgow, 2024), and a qualitative researcher at heart — interviews, video-recorded observation, thematic analysis. These days that same lens is turning toward AI and XR in music education: I'm designing Syn-Aesthetica, a tool that turns music analysis into physical, kinetic movement, and teaching qualitative methods to VR and generative-AI pedagogy postgraduates at Liverpool.</p>
-    <p class="small">The through-line: I care less about whether a tool "works" and more about how it's actually used, understood and negotiated by the people learning and teaching with it. Evaluation and methodology — not tool-building for its own sake.</p>
+    <img class="intro-photo" src="assets/winn-photo.jpg" alt="Winn Ge">
+    <div class="intro-text">
+      <p>I'm a PhD in Education (University of Glasgow, 2024), and a qualitative researcher at heart — interviews, video-recorded observation, thematic analysis. These days that same lens is turning toward AI and XR in music education: I'm designing Syn-Aesthetica, a tool that turns music analysis into physical, kinetic movement, and teaching qualitative methods to VR and generative-AI pedagogy postgraduates at Liverpool.</p>
+      <p class="small">The through-line: I care less about whether a tool "works" and more about how it's actually used, understood and negotiated by the people learning and teaching with it. Evaluation and methodology — not tool-building for its own sake.</p>
+    </div>
   </div>
 
   <main>

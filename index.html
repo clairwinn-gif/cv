@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xiaowen (Winn) Ge</title>
-<meta name="description" content="Xiaowen (Winn) Ge — researcher working across AI, XR and music education">
+<meta name="description" content="Xiaowen (Winn) Ge — qualitative researcher in music education, creativity and AI tools">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,23 +22,20 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--bg);
+    background: #2b1f45;
     color: var(--ink);
     font-family: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ---------- HERO ---------- */
-  .hero {
-    position: relative;
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 24px;
-    overflow: hidden;
+  /* ---------- BACKDROP (fixed) + COLUMN ---------- */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
     background:
+      radial-gradient(620px 620px at 88% -6%, rgba(255,196,210,.35) 0%, transparent 70%),
       radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.9) 0, transparent 100%),
       radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,.7) 0, transparent 100%),
       radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,.8) 0, transparent 100%),
@@ -49,83 +46,62 @@
       radial-gradient(2px 2px at 85% 40%, rgba(255,255,255,.8) 0, transparent 100%),
       linear-gradient(150deg, #2b1f45 0%, #5a2f56 32%, #b2506d 62%, #e79a8e 100%);
   }
-  .hero-glow {
-    position: absolute;
-    width: 620px;
-    height: 620px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,196,210,.35) 0%, transparent 70%);
-    top: -180px;
-    right: -160px;
-    filter: blur(10px);
-    pointer-events: none;
+  .page {
+    max-width: 680px;
+    margin: 40px auto;
+    background: var(--bg);
+    border-radius: 4px;
+    box-shadow: 0 0 70px rgba(20,10,30,.45);
+  }
+
+  /* ---------- HEADER ---------- */
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 48px 44px 8px;
   }
   .hero-photo {
-    position: absolute;
-    right: 7%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 320px;
-    height: 320px;
+    flex: none;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255,255,255,.3);
-    box-shadow: 0 24px 64px rgba(20,10,30,.4);
-    z-index: 1;
+    border: 3px solid var(--accent-soft);
+    box-shadow: 0 6px 22px rgba(60,30,60,.18);
   }
-  @media (max-width: 1100px) {
-    .hero-photo { display: none; }
-  }
-  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; width: 100%; }
+  .hero-inner { flex: 1; min-width: 0; }
   .eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255,255,255,.75);
-    margin: 0 0 22px;
+    color: var(--sub);
+    margin: 0 0 10px;
   }
   .hero h1 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
-    font-size: clamp(3.2rem, 11vw, 6.2rem);
-    line-height: 0.98;
+    font-size: clamp(2.1rem, 7vw, 3.1rem);
+    line-height: 1.02;
     letter-spacing: -0.02em;
-    margin: 0 0 26px;
-    background: linear-gradient(100deg, #ffffff 10%, #ffe3ea 45%, #ffc9d6 65%, #ffd9c2 90%);
+    margin: 0 0 14px;
+    background: linear-gradient(100deg, #8a3d54 0%, #c15c78 55%, #d4826f 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #fff;
+    color: var(--accent-deep);
   }
-  .hero h1 em {
-    font-style: italic;
-    font-weight: 400;
-  }
+  .hero h1 em { font-style: italic; font-weight: 400; }
   .hero-tagline {
-    font-size: 1.15rem;
-    color: rgba(255,255,255,.92);
-    max-width: 520px;
-    margin: 0 0 34px;
+    font-size: 1rem;
+    color: var(--ink);
+    margin: 0 0 14px;
   }
-  .hero-meta {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,.78);
-  }
-  .hero-meta a { color: #ffe1e7; text-decoration: none; border-bottom: 1px solid rgba(255,225,231,.4); }
-  .hero-meta a:hover { border-color: #ffe1e7; }
-  .hero-meta .sep { margin: 0 10px; color: rgba(255,255,255,.4); }
-
-  .scroll-cue {
-    position: absolute;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.6);
-  }
+  .hero-meta { font-size: 0.82rem; color: var(--sub); margin: 0; }
+  .hero-meta a { color: var(--accent-deep); text-decoration: none; border-bottom: 1px solid rgba(138,61,84,.3); }
+  .hero-meta a:hover { border-color: var(--accent-deep); }
+  .hero-meta .sep { margin: 0 8px; color: var(--rule); }
 
   /* ---------- NAV ---------- */
   nav.topnav {
@@ -314,9 +290,30 @@
     .tools-grid { grid-template-columns: 1fr; gap: 2px 0; }
     .tools-grid dt { margin-top: 10px; }
   }
+
+  /* ---------- COLUMN OVERRIDES ---------- */
+  .page nav.topnav .nav-inner { max-width: none; padding: 14px 44px; }
+  .page .intro { max-width: none; margin: 0; padding: 36px 44px 28px; }
+  .page .intro p { font-size: 1.28rem; }
+  .page .intro p.small { font-size: 0.98rem; }
+  .page main { max-width: none; margin: 0; padding: 0 44px 56px; }
+  .page footer { max-width: none; margin: 0; padding: 32px 44px 48px; }
+  @media (max-width: 700px) {
+    .page { margin: 0 auto; border-radius: 0; box-shadow: none; }
+    .page .hero { flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px 22px 4px; }
+    .page nav.topnav .nav-inner { padding: 12px 22px; }
+    .page .intro { padding: 28px 22px 20px; }
+    .page .intro p { font-size: 1.18rem; }
+    .page .intro p.small { font-size: 0.95rem; }
+    .page main { padding: 0 22px 44px; }
+    .page footer { padding: 28px 22px 40px; }
+  }
 </style>
 </head>
 <body>
+
+  <div class="backdrop"></div>
+  <div class="page">
 
   <nav class="topnav">
     <div class="nav-inner">
@@ -335,25 +332,24 @@
   </nav>
 
   <div class="hero">
-    <div class="hero-glow"></div>
     <img class="hero-photo" src="assets/winn-photo.jpg" alt="Winn Ge">
     <div class="hero-inner">
       <p class="eyebrow">Edinburgh, UK</p>
       <h1>Hi, I'm Xiaowen<br><em>(Winn) Ge</em>.</h1>
-      <p class="hero-tagline">I research how people actually live with AI and XR in music education — and I build a few of the tools myself along the way.</p>
+      <p class="hero-tagline">I'm curious how people really live with AI in music education. So I study it. And I build small things along the way.</p>
       <p class="hero-meta">
         <a href="mailto:winn_g@outlook.com">winn_g@outlook.com</a>
         <span class="sep">·</span>
         <a href="https://orcid.org/0009-0004-3830-9481" target="_blank" rel="noopener">ORCID 0009-0004-3830-9481</a>
       </p>
     </div>
-    <p class="scroll-cue">Scroll ↓</p>
   </div>
 
   <div class="intro">
     <div class="intro-text">
-      <p>I'm a PhD in Education (University of Glasgow, 2024), and a qualitative researcher at heart — interviews, video-recorded observation, thematic analysis. These days that same lens is turning toward AI and XR in music education: I'm designing Syn-Aesthetica, a tool intended to turn music analysis into physical, kinetic movement, and teaching qualitative methods to VR and generative-AI pedagogy postgraduates at Liverpool.</p>
-      <p class="small">The through-line: I study how tools are actually used, understood and negotiated by the people learning and teaching with them — evaluation and methodology, grounded in real classroom practice.</p>
+      <p>I trained as a qualitative researcher. Interviews. Watching lessons. Listening closely. My PhD (Glasgow, 2024) asked how music teachers in China think about creativity.</p>
+      <p>Now I'm curious about a newer question. What happens when AI walks into the music room? I teach qualitative methods at Liverpool, to postgraduates working on VR and generative AI. I'm building something of my own on the side.</p>
+      <p class="small">The through-line: I like watching how people actually use things. Not how the tool says it works.</p>
     </div>
   </div>
 
@@ -363,13 +359,15 @@
       <h2>Research focus</h2>
       <div class="item">
         <div class="item-title">Creativity in music education</div>
-        <p>Core PhD strand: developed an original theoretical framework and model of creativity, informed by Csikszentmihalyi's Domain-Field-Individual model (the Field as institutional gatekeeper selecting which novelty is transmitted) among other theories. Explains how teachers mediate three curriculum-defined creativity dimensions: sound exploration, improvisation, and composition. Related peer-reviewed journal article forthcoming (<em>Music Education Research</em>).</p>
+        <p>My PhD produced an original theoretical framework and model of creativity in music education. It draws on Csikszentmihalyi's Domain-Field-Individual model, among other theories. His "Field" is the gatekeeper that decides which new ideas get passed on. The model explains how teachers handle three creativity dimensions set by the curriculum: sound exploration, improvisation and composition. A related peer-reviewed article is forthcoming in <em>Music Education Research</em>.</p>
       </div>
 
-      <p class="sub-label">Related project</p>
+      <p class="sub-label">A project of our own</p>
       <div class="item">
         <div class="item-title">Syn-Aesthetica <span style="color:var(--sub); font-weight:400;">— 2025–present</span></div>
-        <p>With jewellery-design PhD collaborator Dong Ding (Edinburgh College of Art). A Python/C++ tool intended to combine librosa feature extraction with a self-trained lightweight emotion classifier (public affective-music datasets) to drive physical/kinetic output via Ding's sculptural mechanisms. My role: project strategy and funding-proposal writing, the analysis pipeline, classifier training, and the educational-evaluation framework — currently at prototype/demo stage. Two outputs in preparation: a scoping review positioning the field (Ding first author; target: <em>CoDesign</em>) and a software paper (Ge first author; target: <em>JOSS</em>).</p>
+        <p>Dong Ding and I started this in early 2025, soon after we both finished our PhDs. No funding. No brief. Just our own read on where music, AI and physical interfaces are heading, and a lot of curiosity.</p>
+        <p>The idea: read the music (its audio features, its emotional tone) and let a sculpture move to it. Ding (jewellery-design PhD, Edinburgh College of Art) designs the mechanisms. I build the analysis pipeline, train a lightweight emotion classifier on public affective-music datasets, and work out how you would evaluate whether it teaches anyone anything. The tool is Python/C++ and still a prototype.</p>
+        <p>We're sharing it early because we're both at the start of our careers, and we want to talk with people in the field. Two papers are in the works: a scoping review of the field (Ding leads; aimed at <em>CoDesign</em>) and a software paper (I lead; aimed at <em>JOSS</em>).</p>
       </div>
     </section>
 
@@ -387,12 +385,12 @@
       <h2>Teaching</h2>
       <div class="item">
         <div class="item-meta">Guest Lecturer, University of Liverpool <span class="dates">· 2024–present</span></div>
-        <p>Standalone workshops on scoping reviews, thematic analysis (NVivo) and publication pathways for postgraduates in VR/generative-AI pedagogy and digital humanities — invited back each cohort following direct faculty feedback that the applied focus visibly increased students' engagement and equipped them to apply the methods in their own dissertations.</p>
-        <p>Workshops and guest teaching reach approximately 60 undergraduate and postgraduate students to date, including method-specific teaching for postgraduate researchers (5 PhD) covering question framing, ethics applications, fieldwork design and write-up.</p>
+        <p>Standalone workshops on scoping reviews, thematic analysis (NVivo) and publication pathways, for postgraduates in VR/generative-AI pedagogy and digital humanities. I'm invited back each cohort. The faculty feedback: the applied focus visibly increased students' engagement and helped them use the methods in their own dissertations.</p>
+        <p>About 60 undergraduate and postgraduate students so far. That includes method-specific teaching for postgraduate researchers (5 PhD): question framing, ethics applications, fieldwork design, write-up.</p>
       </div>
       <div class="item">
         <div class="item-meta">Freelance Museum Educator, National Museums Scotland; Hunterian Museum, University of Glasgow <span class="dates">· 2018–present</span></div>
-        <p>Research, write and deliver interpretation for school, university, public and international audiences; train and assess new guides.</p>
+        <p>I research, write and deliver interpretation for school, university, public and international audiences. I also train and assess new guides.</p>
       </div>
     </section>
 
@@ -447,6 +445,8 @@
     <p>Get in touch: <a href="mailto:winn_g@outlook.com">winn_g@outlook.com</a></p>
     <p>Last updated September 2026.</p>
   </footer>
+
+  </div>
 
 </body>
 </html>
